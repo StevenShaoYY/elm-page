@@ -18,7 +18,6 @@
       }
     },
     created() {
-      console.log(this.food);
     },
     methods: {
       addCart(event) {
@@ -30,6 +29,7 @@
         } else {
           this.food.count++;
         }
+        this.$emit('add', event.target);
       },
       decreaseCart(event) {
         if (!event._constructed) {
